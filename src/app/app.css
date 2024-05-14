@@ -1,0 +1,28 @@
+.upper-block {
+    width: 1017px;
+}
+
+.header {
+    display: flex;
+    padding: 12px 0px 12px 0px;
+    height: 58px;
+    gap: 700px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    display: flex;
+    padding: 10px 0px 10px 0px;
+    height: 36px;
+    justify-content: center;
+}
+.main {
+    flex-grow: 1;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+}
