@@ -1,18 +1,19 @@
 .upper-block {
-    width: 1017px;
+    max-width: 1017px;
+    width: 100%;
 }
 
 .header {
     display: flex;
-    padding: 12px 0px 12px 0px;
+    padding: 12px 0px;
     height: 58px;
-    gap: 700px;
     margin-bottom: 20px;
+    justify-content: space-between;
 }
 
 .footer {
     display: flex;
-    padding: 10px 0px 10px 0px;
+    padding: 10px 0px;
     height: 36px;
     justify-content: center;
 }
@@ -23,6 +24,9 @@
 #root {
     display: flex;
     flex-direction: column;
-    height: 100vh;
     align-items: center;
+}
+
+html, body, #root {
+    height: 100%;
 }
