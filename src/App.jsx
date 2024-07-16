@@ -3,55 +3,47 @@ import { useState } from "react";
 import "./App.css";
 import { Table } from "./components/Table";
 import { Modal } from "./components/Modal";
+import {getAgentsContext, deleteAgentContext, updateAgentContext, addAgentContext} from "./components/Context";
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
-  const [rows, setRows] = useState([
-    {
-      id: "id1",
-      name: "name1",
-      inn: "inn1",
-      kpp: "kpp1",
-      address: "address1"
-    },
-    {
-      id: "id2",
-      name: "name2",
-      inn: "inn2",
-      kpp: "kpp2",
-      address: "address2"
-    },
-    {
-      id: "id3",
-      name: "name3",
-      inn: "inn3",
-      kpp: "kpp3",
-      address: "address3"
-    },
-  ]);
+  const [rows, setRows] = useState([]);
   const [rowToEdit, setRowToEdit] = useState(null);
 
   const handleDeleteRow = (targetIndex) => {
-    setRows(rows.filter((_, idx) => idx !== targetIndex));
+    deleteAgent(rows[targetIndex].id);
   };
 
   const handleEditRow = (idx) => {
     setRowToEdit(idx);
-
     setModalOpen(true);
   };
 
   const handleSubmit = (newRow) => {
     rowToEdit === null
-      ? setRows([...rows, newRow])
-      : setRows(
-          rows.map((currRow, idx) => {
-            if (idx !== rowToEdit) return currRow;
-
-            return newRow;
-          })
-        );
+      ? addAgent(newRow)
+      : updateAgent(newRow);
   };
+
+    function getAgents() {
+        getAgentsContext()
+            .then(result =>
+                setRows(result)
+            )
+            .catch(console.log);
+    }
+
+    function deleteAgent(id) {
+        deleteAgentContext(id).then(getAgents);
+    }
+
+    function addAgent(newRow) {
+        addAgentContext(newRow).then(getAgents);
+    }
+
+    function updateAgent(newRow) {
+        updateAgentContext(newRow).then(getAgents);
+    }
 
   return (
     <div className="App">
@@ -59,6 +51,7 @@ function App() {
       <button onClick={() => setModalOpen(true)} className="btn">
         Add
       </button>
+      {getAgents()}
       {modalOpen && (
         <Modal
           closeModal={() => {
