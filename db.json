@@ -16,17 +16,31 @@
     },
     {
       "id": "id3",
-      "name": "name1",
+      "name": "name1111",
       "inn": "inn1",
       "kpp": "kpp1",
       "address": "address1"
     },
     {
-      "id": "df3",
-      "name": "234",
-      "inn": "2342",
-      "kpp": "2344234",
-      "address": "123234"
+      "id": "34",
+      "name": "gfe",
+      "inn": "rgeg",
+      "kpp": "ertert",
+      "address": "rtert"
+    },
+    {
+      "id": "3434",
+      "name": "fdgdfvbd",
+      "inn": "dfgdfg",
+      "kpp": "dfgdfg",
+      "address": "ergertf"
+    },
+    {
+      "id": "34345",
+      "name": "fgdfg",
+      "inn": "dfg",
+      "kpp": "234",
+      "address": "erter"
     }
   ]
 }

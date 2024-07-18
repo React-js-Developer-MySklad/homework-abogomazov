@@ -1,14 +1,16 @@
-import { useState } from "react";
+import React, {useContext, useState} from "react";
 
 import "./App.css";
 import { Table } from "./components/Table";
 import { Modal } from "./components/Modal";
-import {getAgentsContext, deleteAgentContext, updateAgentContext, addAgentContext} from "./components/Context";
+import {RContext} from "./index";
 
 function App() {
   const [modalOpen, setModalOpen] = useState(false);
   const [rows, setRows] = useState([]);
   const [rowToEdit, setRowToEdit] = useState(null);
+
+    const {getAgentsContext, addAgentContext, updateAgentContext, deleteAgentContext} = useContext(RContext);
 
   const handleDeleteRow = (targetIndex) => {
     deleteAgent(rows[targetIndex].id);
@@ -46,23 +48,23 @@ function App() {
     }
 
   return (
-    <div className="App">
-      <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
-      <button onClick={() => setModalOpen(true)} className="btn">
-        Add
-      </button>
-      {getAgents()}
-      {modalOpen && (
-        <Modal
-          closeModal={() => {
-            setModalOpen(false);
-            setRowToEdit(null);
-          }}
-          onSubmit={handleSubmit}
-          defaultValue={rowToEdit !== null && rows[rowToEdit]}
-        />
-      )}
-    </div>
+            <div className="App">
+              <Table rows={rows} deleteRow={handleDeleteRow} editRow={handleEditRow} />
+              <button onClick={() => setModalOpen(true)} className="btn">
+                Add
+              </button>
+              {getAgents()}
+              {modalOpen && (
+                <Modal
+                  closeModal={() => {
+                    setModalOpen(false);
+                    setRowToEdit(null);
+                  }}
+                  onSubmit={handleSubmit}
+                  defaultValue={rowToEdit !== null && rows[rowToEdit]}
+                />
+              )}
+            </div>
   );
 }
 
