@@ -1,0 +1,46 @@
+{
+  "agents": [
+    {
+      "id": "id1",
+      "name": "name1",
+      "inn": "inn1",
+      "kpp": "kpp1",
+      "address": "address1"
+    },
+    {
+      "id": "id2",
+      "name": "name1",
+      "inn": "inn1",
+      "kpp": "kpp1",
+      "address": "address1"
+    },
+    {
+      "id": "id3",
+      "name": "name1111",
+      "inn": "inn1",
+      "kpp": "kpp1",
+      "address": "address1"
+    },
+    {
+      "id": "34",
+      "name": "gfe",
+      "inn": "rgeg",
+      "kpp": "ertert",
+      "address": "rtert"
+    },
+    {
+      "id": "3434",
+      "name": "fdgdfvbd",
+      "inn": "dfgdfg",
+      "kpp": "dfgdfg",
+      "address": "ergertf"
+    },
+    {
+      "id": "34345",
+      "name": "fgdfg",
+      "inn": "dfg",
+      "kpp": "234",
+      "address": "erter"
+    }
+  ]
+}
